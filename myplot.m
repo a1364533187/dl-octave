@@ -38,5 +38,14 @@ xlim1=0:1:100;
 xlim2=0:1:100;
 [xlim1 xlim2]=meshgrid(xlim1,xlim2);
 z = w(1)*xlim1 + w(2)*xlim2 + b;
-surf(xlim1,xlim2, z)
+h3 = surf(xlim1,xlim2, z)
+pause(1)
+delete(h3)
+xlim3=0:1:100;
+xlim4=0:1:100;
+[xlim3 xlim4]=meshgrid(xlim3,xlim4);
+z = 7*xlim3  -3*xlim4 + 1;
+h4 = surf(xlim3,xlim4, z)
+pause(1)
+delete(h4)
 
