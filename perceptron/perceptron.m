@@ -18,6 +18,14 @@ function [w, b] = perceptron(x, y, stepSize)
 				errorFound = true;
 				w = w + stepSize*y(ind)*x(ind, :);
 				b = b + stepSize*y(ind);
+				hold on
+				xlim1=0:1:100;
+				xlim2=0:1:100;
+				[xlim xlim]=meshgrid(xlim1,xlim2);
+				zlim = w(1)*xlim + w(2)*xlim + b;
+				h = surf(xlim1,xlim2, zlim)
+				pause(0.2)
+				delete(h)
 			end
 		end
 	end
